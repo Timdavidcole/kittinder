@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import agent from "./agent";
 import CatCardContainer from "./Components/CatCardContainer";
+import shuffle from "./shuffle"
 
 class App extends React.Component {
   constructor(props) {
@@ -10,16 +11,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    agent.Breeds.all({ page: 0 }).then(data =>
-      this.setState({ cats: data })
-    );
+    agent.Breeds.all().then(data => this.setState({ cats: data }));
   }
   render() {
-    console.log(this.state.cats);
     return (
       <div>
-        <h1>kitTinder</h1>
-        {this.state.cats.map((breed, index) => {
+        <h1 style={{ padding: "10px" }}>kitTinder</h1>
+        {shuffle(this.state.cats).map((breed, index) => {
           return <CatCardContainer key={index} breed={breed} />;
         })}
       </div>

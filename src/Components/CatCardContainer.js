@@ -23,7 +23,9 @@ class CatCardContainer extends React.Component {
           alt={""}
           style={{ maxWidth: "100%", maxHeight: "100vh" }}
         ></img>
-        <span>{breed.description}</span>
+        <div style={{width: "100%"}}>        
+            <span>{breed.description}</span>
+        </div>
       </div>
     );
   }
