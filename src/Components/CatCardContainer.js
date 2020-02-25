@@ -17,7 +17,7 @@ class CatCardContainer extends React.Component {
     const breed = this.props.breed;
     return (
       <div className="catCardContainer" style={{ padding: "10px"}}>
-        <span>{breed.name}</span>
+        <h2>{breed.name}</h2>
         <img
           src={this.state.image}
           alt={""}
