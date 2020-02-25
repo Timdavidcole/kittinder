@@ -23,23 +23,12 @@ const requests = {
 };
 
 const Breeds = {
-  all: (query) => requests.get(`breeds`, query),
-  byAuthor: author =>
-    requests.get(`/notices?author=${encodeURIComponent(author)}&limit=5`),
-  favoritedBy: author =>
-    requests.get(`/notices?favorited=${encodeURIComponent(author)}&limit=5`),
-  get: slug => requests.get(`/notices/${slug}`),
-  del: slug => requests.del(`/notices/${slug}`)
+  all: (query) => requests.get(`breeds`, query)
 };
 
 const Images = {
   all: () => requests.get(`images/search`),
-  byAuthor: author =>
-    requests.get(`/notices?author=${encodeURIComponent(author)}&limit=5`),
-  favoritedBy: author =>
-    requests.get(`/notices?favorited=${encodeURIComponent(author)}&limit=5`),
-  get: query => requests.get(`images/search`, query),
-  del: slug => requests.del(`/notices/${slug}`)
+  get: query => requests.get(`images/search`, query)
 };
 
 export default {Breeds, Images};

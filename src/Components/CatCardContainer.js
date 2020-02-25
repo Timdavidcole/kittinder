@@ -9,15 +9,23 @@ class CatCardContainer extends React.Component {
 
   componentDidMount() {
     agent.Images.get({ breed_id: this.props.breed.id }).then(data =>
-      this.setState({image: data[0].url})
+      this.setState({ image: data[0].url })
     );
   }
 
   render() {
     const breed = this.props.breed;
-    console.log(breed.id);
-
-    return <div className={"catCardContainer"}>{breed.name}<img src={this.state.image}></img></div>;
+    return (
+      <div className="catCardContainer" style={{ padding: "10px"}}>
+        <span>{breed.name}</span>
+        <img
+          src={this.state.image}
+          alt={""}
+          style={{ maxWidth: "100%", maxHeight: "100vh" }}
+        ></img>
+        <span>{breed.description}</span>
+      </div>
+    );
   }
 }
 
