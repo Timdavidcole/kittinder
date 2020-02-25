@@ -1,15 +1,12 @@
 import React from "react";
 
 class CatCardContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const cat = this.props.cat
     return (
       <div className={"catCardContainer"}>
-        <img src={cat.url}></img>
+        <img src={cat.url} alt={''}></img>
       </div>
     );
   }
