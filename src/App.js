@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import agent from "./agent";
+import CatCardContainer from "./Components/CatCardContainer";
 
 class App extends React.Component {
   constructor(props) {
@@ -19,8 +20,7 @@ class App extends React.Component {
       <div>
         <h1>Hello Cats</h1>
         {this.state.cats.map((cat, index) => {
-          console.log(cat.url)
-        return <h2 key={index}>{`${cat.url}`}</h2>
+          return <CatCardContainer key={index} cat={cat} />;
         })}
       </div>
     );
