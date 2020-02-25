@@ -10,7 +10,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    agent.Images.all({ size: "med", limit: 10, page: 0 }).then(data =>
+    agent.Breeds.all({ page: 0 }).then(data =>
       this.setState({ cats: data })
     );
   }
@@ -19,8 +19,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello Cats</h1>
-        {this.state.cats.map((cat, index) => {
-          return <CatCardContainer key={index} cat={cat} />;
+        {this.state.cats.map((breed, index) => {
+          return <CatCardContainer key={index} breed={breed} />;
         })}
       </div>
     );

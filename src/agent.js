@@ -22,8 +22,8 @@ const requests = {
       .then(responseBody)
 };
 
-const Images = {
-  all: (query) => requests.get(`images/search`, query),
+const Breeds = {
+  all: (query) => requests.get(`breeds`, query),
   byAuthor: author =>
     requests.get(`/notices?author=${encodeURIComponent(author)}&limit=5`),
   favoritedBy: author =>
@@ -32,4 +32,14 @@ const Images = {
   del: slug => requests.del(`/notices/${slug}`)
 };
 
-export default {Images};
+const Images = {
+  all: () => requests.get(`images/search`),
+  byAuthor: author =>
+    requests.get(`/notices?author=${encodeURIComponent(author)}&limit=5`),
+  favoritedBy: author =>
+    requests.get(`/notices?favorited=${encodeURIComponent(author)}&limit=5`),
+  get: query => requests.get(`images/search`, query),
+  del: slug => requests.del(`/notices/${slug}`)
+};
+
+export default {Breeds, Images};
