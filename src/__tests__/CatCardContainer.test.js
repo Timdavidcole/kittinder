@@ -19,5 +19,5 @@ test("checks CatCardContainer snapshot", () => {
 
 test("checks is creates multiple CatCards", () => {
   const catCardContainer = mount(<CatCardContainer cats={breeds} />);
-  expect(catCardContainer.find('#catCard')).toHaveLength(3);
+  expect(catCardContainer.find("#catCard")).toHaveLength(3);
 });
