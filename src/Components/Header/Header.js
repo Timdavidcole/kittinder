@@ -7,12 +7,20 @@ class Header extends React.Component {
     return (
       <header>
         <h1>
-          ki<FaPaw className={"heartIcon"} />t
-          <span style={{ fontSize: "4rem" }}>Tinder</span>
+          <span style={{ fontSize: "4rem" }}>k</span>i
+          <FaPaw className={"heartIcon"} />t
+          <span style={{ fontSize: "4rem" }}>T</span>
+          <div className={"inder"}>
+            <span style={{ fontSize: "2rem" }}>i</span>
+            <FaPaw
+              className={"heartIcon"}
+              style={{ left: "-1.5px", top: "16px", fontSize: "0.8rem" }}
+            />
+            <span style={{ letterSpacing: "-4px" }}>nder</span>
+          </div>
         </h1>
       </header>
     );
   }
 }
-
 export default Header;
