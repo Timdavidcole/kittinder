@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`checks CatCard snapshot 1`] = `
-<div>
+<div
+  id="catCard"
+>
   <h2>
     test cat
   </h2>

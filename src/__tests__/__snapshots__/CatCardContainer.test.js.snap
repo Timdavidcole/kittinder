@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks CatCardContainer snapshot 1`] = `
+<div
+  className="catCardContainer"
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    id="catCard"
+  >
+    <h2 />
+    <img
+      alt=""
+      id="cat-image"
+      src=""
+      style={
+        Object {
+          "maxHeight": "100vh",
+          "maxWidth": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    id="catCard"
+  >
+    <h2 />
+    <img
+      alt=""
+      id="cat-image"
+      src=""
+      style={
+        Object {
+          "maxHeight": "100vh",
+          "maxWidth": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <span />
+    </div>
+  </div>
+  <div
+    id="catCard"
+  >
+    <h2 />
+    <img
+      alt=""
+      id="cat-image"
+      src=""
+      style={
+        Object {
+          "maxHeight": "100vh",
+          "maxWidth": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <span />
+    </div>
+  </div>
+</div>
+`;

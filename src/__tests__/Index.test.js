@@ -10,9 +10,9 @@ configure({ adapter: new Adapter() });
 jest.mock("../agent");
 
 test("checks Index snapshot", () => {
-  const catCard = renderer.create(<Index />);
+  const index = renderer.create(<Index />);
 
-  let tree = catCard.toJSON();
+  let tree = index.toJSON();
   expect(tree).toMatchSnapshot();
 });
 

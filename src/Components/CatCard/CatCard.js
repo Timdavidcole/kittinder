@@ -21,7 +21,7 @@ class CatCard extends React.Component {
   render () {
     const {cat} = this.props
     return (
-      <div>
+      <div id="catCard">
         <h2>{cat.name}</h2>
         <img id="cat-image"
           src={this.state.image}
