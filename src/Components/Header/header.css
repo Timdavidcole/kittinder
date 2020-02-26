@@ -10,13 +10,13 @@ header h1 {
     position: absolute;
     color: rgb(255, 182, 205);
     font-size: 1.1rem;
-    top: 7.5%;
-    left: 5.4%
+    top: 59px;
+    left: 47px
 }
 
 .inder {
     display: inline-block;
     position: absolute;
-    left: 13%;
-    top: 7%
+    left: 115px;
+    top: 55px
 }
