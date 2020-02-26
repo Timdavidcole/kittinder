@@ -1,4 +1,4 @@
-import shuffle from './shuffle';
+import shuffle from './Models/shuffle';
 
 test('shuffles an array', () => {
   const array = [1, 2, 3]
