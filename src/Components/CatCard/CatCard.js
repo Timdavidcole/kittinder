@@ -23,7 +23,7 @@ class CatCard extends React.Component {
     return (
       <div>
         <h2>{cat.name}</h2>
-        <img
+        <img id="cat-image"
           src={this.state.image}
           alt={''}
           style={{ maxWidth: '100%', maxHeight: '100vh' }}

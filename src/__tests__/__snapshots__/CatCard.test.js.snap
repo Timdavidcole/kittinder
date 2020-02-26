@@ -7,6 +7,7 @@ exports[`CatCard renders 1`] = `
   </h2>
   <img
     alt=""
+    id="cat-image"
     src=""
     style={
       Object {
@@ -29,13 +30,14 @@ exports[`CatCard renders 1`] = `
 </div>
 `;
 
-exports[`CatCard renders 2`] = `
+exports[`checks CatCard snapshot 1`] = `
 <div>
   <h2>
     test cat
   </h2>
   <img
     alt=""
+    id="cat-image"
     src=""
     style={
       Object {
