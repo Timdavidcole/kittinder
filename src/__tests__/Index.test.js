@@ -2,7 +2,7 @@ import Index from "../Components/Main/Index";
 import React from "react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
-import { mount, configure } from "enzyme";
+import { shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
@@ -16,10 +16,7 @@ test("checks Index snapshot", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("CatCard has correct breeds array from API call", done => {
-  const wrapper = mount(<Index />);
-  setImmediate(() => {
-    expect(wrapper.state('cats')).toEqual(["Cat1", "Cat2", "Cat3"]);
-    done();
-  });
+test("CatCard has correct breeds array from API call", async () => {
+  const wrapper = await shallow(<Index />);
+  expect(wrapper.state("cats")).toEqual(["Cat1", "Cat2", "Cat3"]);
 });

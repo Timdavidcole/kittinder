@@ -13,7 +13,6 @@ class Index extends React.Component {
   }
   
   render() {
-    console.log(this.state.cats)
     return (
       <div>
         <CatCardContainer cats={this.state.cats} />;
