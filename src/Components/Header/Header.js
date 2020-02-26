@@ -1,14 +1,14 @@
 import React from "react";
+import "./header.css";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { image: [] };
-  }
-
   render() {
     return (
-      <header>kitTinder</header>
+      <header>
+        <h1>
+          kit<span style={{ fontSize: "4rem" }}>Tinder</span>
+        </h1>
+      </header>
     );
   }
 }
