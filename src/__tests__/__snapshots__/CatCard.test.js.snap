@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatCard renders 1`] = `
+<div>
+  <h2>
+    test cat
+  </h2>
+  <img
+    alt=""
+    src=""
+    style={
+      Object {
+        "maxHeight": "100vh",
+        "maxWidth": "100%",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      I'm a test cat
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CatCard renders 2`] = `
+<div>
+  <h2>
+    test cat
+  </h2>
+  <img
+    alt=""
+    src=""
+    style={
+      Object {
+        "maxHeight": "100vh",
+        "maxWidth": "100%",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <span>
+      I'm a test cat
+    </span>
+  </div>
+</div>
+`;
