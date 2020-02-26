@@ -10,6 +10,7 @@ configure({ adapter: new Adapter() });
 
 jest.mock("../agent");
 const testCat = { name: "test cat", description: "I'm a test cat" };
+
 test("checks CatCard snapshot", () => {
   const catCard = renderer.create(<CatCard cat={testCat} />);
 
@@ -24,10 +25,10 @@ test("CatCard has correct text", () => {
   expect(screen.queryByText(testCat.name)).toBeInTheDocument();
 });
 
-test("CatCard has correct image url", done => {
+test("CatCard has correct image url from API call", done => {
   const wrapper = mount(<CatCard cat={testCat} />);
   setImmediate(() => {
-    expect(wrapper.state().image).toBe("test");
+    expect(wrapper.state().image).toBe("testURL");
     done();
   });
 });

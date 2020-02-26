@@ -6,4 +6,5 @@ test('shuffles an array', () => {
   expect(shuffledArray).toContain(1);
   expect(shuffledArray).toContain(2);
   expect(shuffledArray).toContain(3);
+  expect(shuffledArray.length).toEqual(3);
 });
