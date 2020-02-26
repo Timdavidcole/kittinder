@@ -7,3 +7,11 @@ header h1 {
     padding: 10px;
     font-size: 3rem;
 }
+
+.heartIcon {
+    position: absolute;
+    color: rgb(255, 182, 205);
+    font-size: 1.2rem;
+    top: 59px;
+    left: 36px
+}
