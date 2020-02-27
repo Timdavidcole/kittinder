@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks render and NavBar snapshot 1`] = `
+<div
+  className="navBar"
+>
+  <button
+    id="buttonHome"
+    onClick={[Function]}
+    type="button"
+  >
+    Home
+  </button>
+  <button
+    id="buttonFavourites"
+    onClick={[Function]}
+    type="button"
+  >
+    Favourites
+  </button>
+</div>
+`;
