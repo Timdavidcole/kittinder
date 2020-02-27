@@ -9,4 +9,3 @@ test("checks render and Header snapshot", () => {
   let tree = header.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
