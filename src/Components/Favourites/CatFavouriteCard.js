@@ -31,7 +31,7 @@ class CatFavouriteCard extends React.Component {
     const { cat, id } = this.props;
     if (this.state.error) {
       return (
-        <div id="catCard">
+        <div id="catFavouriteCard">
           <h2>{cat.name}</h2>
           <div
             id="errorMessage"
@@ -47,7 +47,7 @@ class CatFavouriteCard extends React.Component {
       );
     } else {
       return (
-        <div id={`catCard${id}`}>
+        <div id={`catFavouriteCard`}>
           <h2>{cat.name}</h2>
           <img
             id="cat-image"

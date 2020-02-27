@@ -14,15 +14,17 @@ class CatFavouritesContainer extends React.Component {
 
   getFavouritesBreedInfo(favourites) {
     favourites.forEach(cat => {
-      agent.Images.getOne(cat.image_id).then(data =>
-        this.setState(prevState => ({
-          favourites: [...prevState.favourites, data]
-        }))
-      ).catch(() =>
-      this.setState({
-        error: true
-      })
-    );;
+      agent.Images.getOne(cat.image_id)
+        .then(data =>
+          this.setState(prevState => ({
+            favourites: [...prevState.favourites, data]
+          }))
+        )
+        .catch(() =>
+          this.setState({
+            error: true
+          })
+        );
     });
   }
 
@@ -52,7 +54,7 @@ class CatFavouritesContainer extends React.Component {
           })}
         </div>
       );
-    } else return null;
+    } else return <div></div>;
   }
 }
 

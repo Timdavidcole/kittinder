@@ -17,7 +17,7 @@ test("checks CatCardContainer snapshot", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("checks is creates multiple CatCards", () => {
-  const catCardContainer = mount(<CatCardContainer cats={breeds} />);
+test("checks is creates multiple CatCards", async () => {
+  const catCardContainer = await mount(<CatCardContainer cats={breeds} />);
   expect(catCardContainer.find("#catCard")).toHaveLength(3);
 });

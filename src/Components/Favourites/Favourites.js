@@ -33,7 +33,6 @@ class Favourites extends React.Component {
         <div>
           <CatFavouritesContainer
             userId={this.props.userId}
-            cats={this.props.cats}
           />
         </div>
       );
