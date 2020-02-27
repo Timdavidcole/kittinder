@@ -19,6 +19,7 @@ class Index extends React.Component {
   }
 
   render() {
+    console.log(this.state.cats)
     if (this.state.error) {
       return (
         <div style={{ padding: "5px ", fontSize: "0.8rem" }}>

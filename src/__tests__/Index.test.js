@@ -8,6 +8,14 @@ import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
 jest.mock("../agent");
+import agent from "../agent";
+jest.mock('../Components/CatCard/CatCardContainer')
+
+beforeEach(() => {
+  agent.Breeds.all.mockImplementation(() => {
+    return Promise.resolve([{ id: "test", name: "testcat", description: "Just a test cat"}]);
+  });
+});
 
 test("checks Index snapshot", () => {
   const index = renderer.create(<Index />);
@@ -18,5 +26,5 @@ test("checks Index snapshot", () => {
 
 test("CatCard has correct breeds array from API call", async () => {
   const wrapper = await shallow(<Index />);
-  expect(wrapper.state("cats")).toEqual(["Cat1", "Cat2", "Cat3"]);
+  expect(wrapper.state("cats")).toEqual([{ id: "test", name: "testcat", description: "Just a test cat"}]);
 });
