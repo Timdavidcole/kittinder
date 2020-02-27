@@ -28,7 +28,8 @@ const Breeds = {
 
 const Images = {
   all: () => requests.get(`images/search`),
-  get: query => requests.get(`images/search`, query)
+  get: query => requests.get(`images/search`, query),
+  getOne: (imageId) => requests.get(`images/${imageId}`)
 };
 
 const Favourites = {

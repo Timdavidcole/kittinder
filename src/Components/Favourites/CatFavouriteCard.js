@@ -1,25 +1,21 @@
 import React from "react";
 import agent from "../../agent";
-import FavouriteButton from "./FavouriteButton";
 
-class CatCard extends React.Component {
+class CatFavouriteCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       image: [],
       resolved: false,
-      loading: false,
       error: true
     };
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
     agent.Images.get({ breed_id: this.props.cat.id })
       .then(data =>
         this.setState({
           image: data[0],
-          loading: false,
           resolved: true,
           error: false
         })
@@ -32,9 +28,8 @@ class CatCard extends React.Component {
   }
 
   render() {
-    const { cat } = this.props;
+    const { cat, id } = this.props;
     console.log(this.state.image)
-
     if (this.state.error) {
       return (
         <div id="catCard">
@@ -53,7 +48,7 @@ class CatCard extends React.Component {
       );
     } else {
       return (
-        <div id={`catCard${this.props.key}`}>
+        <div id={`catCard${id}`}>
           <h2>{cat.name}</h2>
           <img
             id="cat-image"
@@ -64,14 +59,10 @@ class CatCard extends React.Component {
           <div style={{ width: "100%" }}>
             <span>{cat.description}</span>
           </div>
-          <FavouriteButton
-            userId={this.props.userId}
-            imageId={this.state.image.id}
-          />
         </div>
       );
     }
   }
 }
 
-export default CatCard;
+export default CatFavouriteCard;
