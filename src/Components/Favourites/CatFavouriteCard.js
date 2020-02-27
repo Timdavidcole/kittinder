@@ -29,7 +29,6 @@ class CatFavouriteCard extends React.Component {
 
   render() {
     const { cat, id } = this.props;
-    console.log(this.state.image)
     if (this.state.error) {
       return (
         <div id="catCard">

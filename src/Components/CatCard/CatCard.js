@@ -33,7 +33,6 @@ class CatCard extends React.Component {
 
   render() {
     const { cat } = this.props;
-    console.log(this.state.image)
 
     if (this.state.error) {
       return (
@@ -53,7 +52,7 @@ class CatCard extends React.Component {
       );
     } else {
       return (
-        <div id={`catCard${this.props.key}`}>
+        <div id={`catCard${this.props.id}`}>
           <h2>{cat.name}</h2>
           <img
             id="cat-image"

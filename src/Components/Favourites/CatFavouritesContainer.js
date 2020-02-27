@@ -18,7 +18,11 @@ class CatFavouritesContainer extends React.Component {
         this.setState(prevState => ({
           favourites: [...prevState.favourites, data]
         }))
-      );
+      ).catch(() =>
+      this.setState({
+        error: true
+      })
+    );;
     });
   }
 
@@ -33,12 +37,10 @@ class CatFavouritesContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state.favourites);
     if (this.state.favourites[0]) {
       return (
         <div className="catCardContainer" style={{ padding: "10px" }}>
           {this.state.favourites.map((cat, index) => {
-            console.log(cat);
             return (
               <CatFavouriteCard
                 userId={this.props.userId}
