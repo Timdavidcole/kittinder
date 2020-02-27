@@ -1,4 +1,4 @@
-import Index from "../Components/Main/Index";
+import Favourites from "../Components/Favourites/Favourites";
 import React from "react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
@@ -9,7 +9,6 @@ configure({ adapter: new Adapter() });
 
 jest.mock("../agent");
 import agent from "../agent";
-jest.mock("../Components/CatCard/CatCardContainer");
 
 beforeEach(() => {
   agent.Breeds.all.mockImplementation(() => {
@@ -17,30 +16,35 @@ beforeEach(() => {
       { id: "test", name: "testcat", description: "Just a test cat" }
     ]);
   });
+  agent.Favourites.get.mockImplementation(() => {
+    return Promise.resolve([
+      { id: "test", name: "testcat", description: "Just a test cat" }
+    ]);
+  });
 });
 
-test("checks Index snapshot", async () => {
-  const index = await renderer.create(<Index />);
+test("checks Favourites snapshot", async () => {
+  const favourites = await renderer.create(<Favourites />);
 
-  let tree = index.toJSON();
+  let tree = favourites.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test("Index has correct breeds array from API call", async () => {
-  const wrapper = await mount(<Index />);
+test("Favourites has correct breeds array from API call", async () => {
+  const wrapper = await mount(<Favourites />);
   expect(agent.Breeds.all).toBeCalled();
   await wrapper.instance().hasFinishedAsync;
   wrapper.setProps({ cats: "TEST" });
-  expect(wrapper.find("Index").props()).toEqual({ cats: "TEST" });
+  expect(wrapper.find("Favourites").props()).toEqual({ cats: "TEST" });
 });
 
-test("Index shows correct error message on API catch", async () => {
+test("Favourites shows correct error message on API catch", async () => {
   agent.Breeds.all.mockImplementation(() => {
     return Promise.reject(new Error("fail"));
   });
 
-  const wrapper = await shallow(<Index />);
+  const wrapper = await shallow(<Favourites />);
   expect(wrapper.text()).toBe(
-    "The cats are a bit shy right now, please try again later."
+    "Hmmm, we can't find your favourites.  Please try again later."
   );
 });

@@ -7,6 +7,7 @@ const Images = {
 }
 
 const Favourites = {
+  get: jest.fn(),
   post: jest.fn()
 }
 

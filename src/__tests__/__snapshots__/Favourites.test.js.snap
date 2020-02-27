@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks Favourites snapshot 1`] = `
+<div
+  style={
+    Object {
+      "fontSize": "0.8rem",
+      "padding": "5px ",
+    }
+  }
+>
+  Hmmm, we can't find your favourites.  Please try again later.
+</div>
+`;

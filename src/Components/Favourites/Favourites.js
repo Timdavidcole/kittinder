@@ -2,7 +2,6 @@ import React from "react";
 import agent from "../../agent";
 import CatFavouritesContainer from "./CatFavouritesContainer";
 
-
 class Favourites extends React.Component {
   constructor(props) {
     super(props);
@@ -23,11 +22,22 @@ class Favourites extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <CatFavouritesContainer userId={this.props.userId} cats={this.props.cats}/>
-      </div>
-    );
+    if (this.state.error) {
+      return (
+        <div style={{ padding: "5px ", fontSize: "0.8rem" }}>
+          Hmmm, we can't find your favourites.  Please try again later.
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <CatFavouritesContainer
+            userId={this.props.userId}
+            cats={this.props.cats}
+          />
+        </div>
+      );
+    }
   }
 }
 
