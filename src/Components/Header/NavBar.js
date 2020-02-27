@@ -1,4 +1,5 @@
 import React from "react";
+import "./header.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={'navBar'}>
         <button id={"home"} >
           HOME
         </button>

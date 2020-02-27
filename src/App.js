@@ -29,7 +29,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route path="/favourites">
-              <Favourites />
+              <Favourites cats={this.state.cats} userId={this.state.userId} />
             </Route>
             <Route path="/">
               <Index
