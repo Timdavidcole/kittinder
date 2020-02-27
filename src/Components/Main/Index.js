@@ -5,21 +5,33 @@ import CatCardContainer from "../CatCard/CatCardContainer";
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { cats: [] };
+    this.state = { error: null, cats: [] };
   }
 
   componentDidMount() {
     agent.Breeds.all()
       .then(data => this.setState({ cats: data }))
-      .catch(err => console.error(err));
+      .catch(() =>
+        this.setState({
+          error: true
+        })
+      );
   }
 
   render() {
-    return (
-      <div>
-        <CatCardContainer cats={this.state.cats} />;
-      </div>
-    );
+    if (this.state.error) {
+      return (
+        <div style={{ padding: "5px ", fontSize: "0.8rem" }}>
+          Kitten server is taking a nap, please try again later.
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <CatCardContainer cats={this.state.cats} />;
+        </div>
+      );
+    }
   }
 }
 
