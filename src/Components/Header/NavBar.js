@@ -2,6 +2,7 @@ import React from "react";
 import "./header.css";
 import { withRouter } from "react-router-dom";
 
+
 class NavBar extends React.Component {
 
   render() {
@@ -28,11 +29,12 @@ class NavBar extends React.Component {
     ));
     return (
       <div className={"navBar"}>
-        <ButtonHome />
-        <ButtonFavourites />
-      </div>
+      <ButtonHome />
+      <ButtonFavourites />
+    </div>
+      
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
