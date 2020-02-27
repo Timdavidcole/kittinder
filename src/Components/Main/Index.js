@@ -9,9 +9,11 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    agent.Breeds.all().then(data => this.setState({ cats: data }));
+    agent.Breeds.all()
+      .then(data => this.setState({ cats: data }))
+      .catch(err => console.error(err));
   }
-  
+
   render() {
     return (
       <div>
