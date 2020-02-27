@@ -6,6 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
+        <h2>Find your favourite cat breed...</h2>
         <Logo />
       </header>
     );

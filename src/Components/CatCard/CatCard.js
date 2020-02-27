@@ -36,7 +36,9 @@ class CatCard extends React.Component {
       return (
         <div id="catCard">
           <h2>{cat.name}</h2>
-          <div style={{ padding: "5px ", fontSize: "0.8rem"}}>Cat image server is taking a nap, please try again later.</div>
+          <div style={{ padding: "5px ", fontSize: "0.8rem" }}>
+            This cat doesn't like having it's picture shown right now, please try again later.
+          </div>
           <div style={{ width: "100%" }}>
             <span>{cat.description}</span>
           </div>
@@ -49,7 +51,7 @@ class CatCard extends React.Component {
           <img
             id="cat-image"
             src={this.state.image}
-            alt={"cat-image"}
+            alt={"cat"}
             style={{ maxWidth: "100%", maxHeight: "100vh" }}
           ></img>
           <div style={{ width: "100%" }}>

@@ -8,7 +8,7 @@ exports[`checks CatCard snapshot 1`] = `
     test cat
   </h2>
   <img
-    alt="cat-image"
+    alt="cat"
     id="cat-image"
     src=""
     style={

@@ -19,11 +19,10 @@ class Index extends React.Component {
   }
 
   render() {
-    console.log(this.state.cats)
     if (this.state.error) {
       return (
         <div style={{ padding: "5px ", fontSize: "0.8rem" }}>
-          Kitten server is taking a nap, please try again later.
+          The cats are a bit shy right now, please try again later.
         </div>
       );
     } else {

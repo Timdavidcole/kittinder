@@ -4,6 +4,15 @@ header h1 {
     color: rgb(255, 182, 205);
     padding: 10px;
     font-size: 3rem;
+    z-index: 2;
+}
+
+header h2 {
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(255, 182, 205);
+    padding: 30px;
+    font-size: 1rem;
+    float: right
 }
 
 .heartIcon {
@@ -11,12 +20,14 @@ header h1 {
     color: rgb(255, 182, 205);
     font-size: 1.1rem;
     top: 59px;
-    left: 47px
+    left: 47px;
+    z-index: 2;
 }
 
 .inder {
     display: inline-block;
     position: absolute;
     left: 115px;
-    top: 55px
+    top: 55px;
+    z-index: 2;
 }
