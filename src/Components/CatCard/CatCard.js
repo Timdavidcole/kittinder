@@ -8,7 +8,7 @@ class CatCard extends React.Component {
       image: "",
       resolved: false,
       loading: false,
-      error: null
+      error: true
     };
   }
 
@@ -23,11 +23,12 @@ class CatCard extends React.Component {
           error: false
         })
       )
-      .catch(() =>
+      .catch((error) => {
         this.setState({
           error: true
         })
-      );
+      });
+      
   }
 
   render() {
@@ -36,8 +37,9 @@ class CatCard extends React.Component {
       return (
         <div id="catCard">
           <h2>{cat.name}</h2>
-          <div style={{ padding: "5px ", fontSize: "0.8rem" }}>
-            This cat doesn't like having it's picture shown right now, please try again later.
+          <div id="errorMessage" style={{ padding: "5px ", fontSize: "0.8rem" }}>
+            This cat doesn't like having it's picture shown right now, please
+            try again later.
           </div>
           <div style={{ width: "100%" }}>
             <span>{cat.description}</span>

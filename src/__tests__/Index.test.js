@@ -9,16 +9,18 @@ configure({ adapter: new Adapter() });
 
 jest.mock("../agent");
 import agent from "../agent";
-jest.mock('../Components/CatCard/CatCardContainer')
+jest.mock("../Components/CatCard/CatCardContainer");
 
 beforeEach(() => {
   agent.Breeds.all.mockImplementation(() => {
-    return Promise.resolve([{ id: "test", name: "testcat", description: "Just a test cat"}]);
+    return Promise.resolve([
+      { id: "test", name: "testcat", description: "Just a test cat" }
+    ]);
   });
 });
 
-test("checks Index snapshot", () => {
-  const index = renderer.create(<Index />);
+test("checks Index snapshot", async () => {
+  const index = await renderer.create(<Index />);
 
   let tree = index.toJSON();
   expect(tree).toMatchSnapshot();
@@ -26,5 +28,18 @@ test("checks Index snapshot", () => {
 
 test("CatCard has correct breeds array from API call", async () => {
   const wrapper = await shallow(<Index />);
-  expect(wrapper.state("cats")).toEqual([{ id: "test", name: "testcat", description: "Just a test cat"}]);
+  expect(wrapper.state("cats")).toEqual([
+    { id: "test", name: "testcat", description: "Just a test cat" }
+  ]);
+});
+
+test("CatCard has correct breeds array from API call", async () => {
+  agent.Breeds.all.mockImplementation(() => {
+    return Promise.reject(new Error("fail"));
+  });
+
+  const wrapper = await shallow(<Index />);
+  expect(wrapper.text()).toBe(
+    "The cats are a bit shy right now, please try again later."
+  );
 });

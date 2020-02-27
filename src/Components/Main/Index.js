@@ -5,12 +5,12 @@ import CatCardContainer from "../CatCard/CatCardContainer";
 class Index extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { error: null, cats: [] };
+    this.state = { error: true, cats: [] };
   }
 
   componentDidMount() {
     agent.Breeds.all()
-      .then(data => this.setState({ cats: data }))
+      .then(data => this.setState({ error: false, cats: data }))
       .catch(() =>
         this.setState({
           error: true

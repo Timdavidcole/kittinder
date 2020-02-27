@@ -10,7 +10,7 @@ exports[`checks CatCard snapshot 1`] = `
   <img
     alt="cat"
     id="cat-image"
-    src=""
+    src="testURL"
     style={
       Object {
         "maxHeight": "100vh",
