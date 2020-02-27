@@ -2,7 +2,7 @@
 
 exports[`checks CatCard snapshot 1`] = `
 <div
-  id="catCard"
+  id="catCardundefined"
 >
   <h2>
     test cat
@@ -29,5 +29,11 @@ exports[`checks CatCard snapshot 1`] = `
       I'm a test cat
     </span>
   </div>
+  <button
+    id="favouriteButtonundefined"
+    onClick={[Function]}
+  >
+    Favourite
+  </button>
 </div>
 `;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks Index snapshot 1`] = `
+<button
+  id="favouriteButtonundefined"
+  onClick={[Function]}
+>
+  Favourite
+</button>
+`;

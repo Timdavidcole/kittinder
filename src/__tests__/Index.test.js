@@ -2,7 +2,7 @@ import Index from "../Components/Main/Index";
 import React from "react";
 import renderer from "react-test-renderer";
 import "@testing-library/jest-dom";
-import { shallow, configure } from "enzyme";
+import { mount, shallow, configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
@@ -27,10 +27,11 @@ test("checks Index snapshot", async () => {
 });
 
 test("CatCard has correct breeds array from API call", async () => {
-  const wrapper = await shallow(<Index />);
-  expect(wrapper.state("cats")).toEqual([
-    { id: "test", name: "testcat", description: "Just a test cat" }
-  ]);
+  const wrapper = await mount(<Index />);
+  expect(agent.Breeds.all).toBeCalled();
+  await wrapper.instance().hasFinishedAsync;
+  wrapper.setProps({ cats: "TEST" });
+  expect(wrapper.find("Index").props()).toEqual({ cats: "TEST" });
 });
 
 test("CatCard has correct breeds array from API call", async () => {

@@ -6,4 +6,8 @@ const Images = {
   get: jest.fn()
 }
 
-export default { Breeds, Images };
+const Favourites = {
+  post: jest.fn()
+}
+
+export default { Breeds, Images, Favourites };

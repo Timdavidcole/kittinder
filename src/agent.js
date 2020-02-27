@@ -14,16 +14,16 @@ const requests = {
       .then(responseBody),
   post: (url, body) =>
     _superagent
-      .post(`${API_ROOT}${url}`, body)
+      .post(`${API_ROOT}${url}`)
+      .set("x-api-key", API_KEY)
+      .send(body)
       .then(responseBody),
   put: (url, body) =>
-    _superagent
-      .put(`${API_ROOT}${url}`, body)
-      .then(responseBody)
+    _superagent.put(`${API_ROOT}${url}`, body).then(responseBody)
 };
 
 const Breeds = {
-  all: (query) => requests.get(`breeds`, query)
+  all: query => requests.get(`breeds`, query)
 };
 
 const Images = {
@@ -31,4 +31,13 @@ const Images = {
   get: query => requests.get(`images/search`, query)
 };
 
-export default {Breeds, Images};
+const Favourites = {
+  get: userId => requests.get("favourites", { sub_id: `your-user-${userId}` }),
+  post: (imageId, userId) =>
+    requests.post("favourites", {
+      image_id: imageId,
+      sub_id: `your-user-${userId}`
+    })
+};
+
+export default { Breeds, Images, Favourites };

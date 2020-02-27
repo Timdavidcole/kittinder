@@ -35,12 +35,12 @@ test("CatCard has correct text", async () => {
 
 test("CatCard has correct image url from API call", async () => {
   const wrapper = await mount(<CatCard cat={testCat} />);
-  expect(wrapper.state().image).toBe("testURL");
+  expect(wrapper.state().image.url).toBe("testURL");
 });
 
 test("CatCard shows error if API call catches", async () => {
   agent.Images.get.mockImplementation(() => {
-    return Promise.reject(new Error('fail'));
+    return Promise.reject(new Error("fail"));
   });
   const wrapper = await shallow(<CatCard cat={testCat} />);
   expect.assertions(1);

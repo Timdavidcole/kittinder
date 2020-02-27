@@ -8,7 +8,7 @@ class CatCardContainer extends React.Component {
     return (
       <div className="catCardContainer" style={{ padding: "10px" }}>
         {shuffle(breeds).map((cat, index) => {
-          return <CatCard cat={cat} key={index} />;
+          return <CatCard userId={this.props.userId} cat={cat} key={index} />;
         })}
       </div>
     );
