@@ -31,34 +31,58 @@ class CatFavouriteCard extends React.Component {
     const { cat } = this.props;
     if (this.state.error) {
       return (
-        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id="catFavouriteCard">
-          <h2>{cat.name}</h2>
+        <center>
           <div
-            id="errorMessage"
-            style={{ padding: "5px ", fontSize: "0.8rem" }}
+            style={{
+              backgroudColor: "rgb(255, 182, 205)",
+              margin: "20px",
+              padding: "5px",
+              borderRadius: "20px",
+              boxShadow: "0px 0px 15px 0px rgba(158,158,158,1)",
+              maxWidth: "400px"
+            }}
+            id="catFavouriteCard"
           >
-            This cat doesn't like having it's picture shown right now, please
-            try again later.
+            <h2>{cat.name}</h2>
+            <div
+              id="errorMessage"
+              style={{ padding: "5px ", fontSize: "0.8rem" }}
+            >
+              This cat doesn't like having it's picture shown right now, please
+              try again later.
+            </div>
+            <div style={{ width: "100%" }}>
+              <span>{cat.description}</span>
+            </div>
           </div>
-          <div style={{ width: "100%" }}>
-            <span>{cat.description}</span>
-          </div>
-        </div>
+        </center>
       );
     } else {
       return (
-        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id={`catFavouriteCard`}>
-          <h2>{cat.name}</h2>
-          <img
-            id="cat-image"
-            src={this.state.image.url}
-            alt={"cat"}
-            style={{ maxWidth: "400px", maxHeight: "400px" }}
-          ></img>
-          <div style={{ width: "100%" }}>
-            <span>{cat.description}</span>
+        <center>
+          <div
+            style={{
+              backgroudColor: "rgb(255, 182, 205)",
+              margin: "20px",
+              padding: "5px",
+              borderRadius: "20px",
+              boxShadow: "0px 0px 15px 0px rgba(158,158,158,1)",
+              maxWidth: "400px"
+            }}
+            id={`catFavouriteCard`}
+          >
+            <h2>{cat.name}</h2>
+            <img
+              id="cat-image"
+              src={this.state.image.url}
+              alt={"cat"}
+              style={{ maxWidth: "400px", maxHeight: "400px" }}
+            ></img>
+            <div style={{ width: "100%" }}>
+              <span>{cat.description}</span>
+            </div>
           </div>
-        </div>
+        </center>
       );
     }
   }
