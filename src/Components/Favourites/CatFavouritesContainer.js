@@ -7,7 +7,8 @@ class CatFavouritesContainer extends React.Component {
     super(props);
     this.state = {
       favourites: [],
-      error: false
+      error: false,
+      loading: false
     };
     this.getFavouritesBreedInfo = this.getFavouritesBreedInfo.bind(this);
   }
@@ -18,6 +19,7 @@ class CatFavouritesContainer extends React.Component {
         .then(data =>
           this.setState(prevState => ({
             favourites: [...prevState.favourites, data],
+            loading: false,
             error: false
           }))
         )
@@ -30,8 +32,10 @@ class CatFavouritesContainer extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({loading: true})
     agent.Favourites.get(this.props.userId)
       .then(data => this.getFavouritesBreedInfo(data))
+      .then(data => this.setState({loading: false}))
       .catch(() =>
         this.setState({
           error: true
@@ -44,6 +48,13 @@ class CatFavouritesContainer extends React.Component {
       return (
         <div id={"errorCard"} style={{ padding: "5px ", fontSize: "0.8rem" }}>
           Hmmm, we can't find your favourites. Please try again later.
+        </div>
+      );
+    }
+    if (this.state.loading) {
+      return (
+        <div id={"errorCard"} style={{ padding: "5px ", fontSize: "0.8rem" }}>
+          Loading...
         </div>
       );
     }
@@ -62,7 +73,12 @@ class CatFavouritesContainer extends React.Component {
           })}
         </div>
       );
-    } else return <div></div>;
+    } else
+      return (
+        <div id={"errorCard"} style={{ padding: "5px ", fontSize: "0.8rem" }}>
+          I looks like you don't have any favourites yet!
+        </div>
+      );
   }
 }
 

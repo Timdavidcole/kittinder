@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`checks Index snapshot 1`] = `
-<div
-  style={
-    Object {
-      "fontSize": "0.8rem",
-      "padding": "5px ",
-    }
-  }
->
-  The cats are a bit shy right now, please try again later.
+<div>
+  ;
 </div>
 `;

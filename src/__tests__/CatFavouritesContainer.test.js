@@ -49,6 +49,7 @@ test("shows error if Favourites.get api call fails", async () => {
   );
   expect(agent.Favourites.get).toBeCalled();
   await catFavouritesContainer.instance().hasFinishedAsync;
+  await catFavouritesContainer.instance().hasFinishedAsync;
   expect(catFavouritesContainer.find("#errorCard").text()).toEqual(
     "Hmmm, we can't find your favourites. Please try again later."
   );

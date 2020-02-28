@@ -40,6 +40,8 @@ test("Index shows correct error message on API catch", async () => {
   });
 
   const wrapper = await shallow(<Index />);
+  await wrapper.instance().hasFinishedAsync;
+
   expect(wrapper.text()).toBe(
     "The cats are a bit shy right now, please try again later."
   );
