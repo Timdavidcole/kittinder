@@ -7,7 +7,7 @@ class CatFavouritesContainer extends React.Component {
     super(props);
     this.state = {
       favourites: [],
-      error: true
+      error: false
     };
     this.getFavouritesBreedInfo = this.getFavouritesBreedInfo.bind(this);
   }
@@ -17,7 +17,8 @@ class CatFavouritesContainer extends React.Component {
       agent.Images.getOne(cat.image_id)
         .then(data =>
           this.setState(prevState => ({
-            favourites: [...prevState.favourites, data]
+            favourites: [...prevState.favourites, data],
+            error: false
           }))
         )
         .catch(() =>
@@ -39,6 +40,13 @@ class CatFavouritesContainer extends React.Component {
   }
 
   render() {
+    if (this.state.error) {
+      return (
+        <div id={"errorCard"} style={{ padding: "5px ", fontSize: "0.8rem" }}>
+          Hmmm, we can't find your favourites. Please try again later.
+        </div>
+      );
+    }
     if (this.state.favourites[0]) {
       return (
         <div className="catCardContainer" style={{ padding: "10px" }}>
