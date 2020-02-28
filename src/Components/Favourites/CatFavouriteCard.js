@@ -31,7 +31,7 @@ class CatFavouriteCard extends React.Component {
     const { cat } = this.props;
     if (this.state.error) {
       return (
-        <div id="catFavouriteCard">
+        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id="catFavouriteCard">
           <h2>{cat.name}</h2>
           <div
             id="errorMessage"
@@ -47,13 +47,13 @@ class CatFavouriteCard extends React.Component {
       );
     } else {
       return (
-        <div id={`catFavouriteCard`}>
+        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id={`catFavouriteCard`}>
           <h2>{cat.name}</h2>
           <img
             id="cat-image"
             src={this.state.image.url}
             alt={"cat"}
-            style={{ maxWidth: "100%", maxHeight: "100vh" }}
+            style={{ maxWidth: "400px", maxHeight: "400px" }}
           ></img>
           <div style={{ width: "100%" }}>
             <span>{cat.description}</span>

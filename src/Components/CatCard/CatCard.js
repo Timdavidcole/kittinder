@@ -15,7 +15,7 @@ class CatCard extends React.Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    agent.Images.get({ breed_id: this.props.cat.id })
+    agent.Images.get(`breed_id=${this.props.cat.id}&size=small`)
       .then(data =>
         this.setState({
           image: data[0],
@@ -36,7 +36,7 @@ class CatCard extends React.Component {
 
     if (this.state.error) {
       return (
-        <div id="catCard">
+        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id="catCard">
           <h2>{cat.name}</h2>
           <div
             id="errorMessage"
@@ -52,13 +52,13 @@ class CatCard extends React.Component {
       );
     } else {
       return (
-        <div id={`catCard${this.props.id}`}>
+        <div style={{ maxWidth: "400px", maxHeight: "800px" }} id={`catCard${this.props.id}` }>
           <h2>{cat.name}</h2>
           <img
             id="cat-image"
             src={this.state.image.url}
             alt={"cat"}
-            style={{ maxWidth: "100%", maxHeight: "100vh" }}
+            style={{ maxWidth: "400px", maxHeight: "400px" }}
           ></img>
           <div style={{ width: "100%" }}>
             <span>{cat.description}</span>
