@@ -1,39 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`checks CatCard snapshot 1`] = `
-<div
-  id="catCardundefined"
->
-  <h2>
-    test cat
-  </h2>
-  <img
-    alt="cat"
-    id="cat-image"
-    src="testURL"
-    style={
-      Object {
-        "maxHeight": "100vh",
-        "maxWidth": "100%",
-      }
-    }
-  />
+<center>
   <div
+    id="catCardundefined"
     style={
       Object {
-        "width": "100%",
+        "borderRadius": "5px",
+        "boxShadow": "0px 0px 15px 0px rgba(158,158,158,1)",
+        "margin": "20px",
+        "maxWidth": "400px",
+        "padding": "5px",
       }
     }
   >
-    <span>
-      I'm a test cat
-    </span>
+    <h2>
+      test cat
+    </h2>
+    <img
+      alt="cat"
+      id="cat-image"
+      src="testURL"
+      style={
+        Object {
+          "maxHeight": "400px",
+          "maxWidth": "400px",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <span>
+        I'm a test cat
+      </span>
+    </div>
+    <button
+      id="favouriteButtonundefined"
+      onClick={[Function]}
+    >
+      Favourite
+    </button>
   </div>
-  <button
-    id="favouriteButtonundefined"
-    onClick={[Function]}
-  >
-    Favourite
-  </button>
-</div>
+</center>
 `;
